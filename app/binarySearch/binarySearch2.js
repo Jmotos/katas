@@ -9,19 +9,19 @@ class BinarySearch{
     this.med = Math.floor( ( this.end + this.init ) / 2 );
   }
 
-  itemIsNotFound() {
+  itemIsNotFoundYet() {
     return this.init <= this.end;
   }
 
   itemNotExists(){
-    return this.med === this.end;
+    return this.med === this.init;
   }
 
   chop (item, list) {
     this.end = list.length - 1;
     this.calculateMed();
     
-    while(this.itemIsNotFound) {
+    while(this.itemIsNotFoundYet()) {
       let itemFounded = list[this.med];
       if(itemFounded === item) {
         return this.med;
@@ -31,7 +31,13 @@ class BinarySearch{
       }
       if (itemFounded > item) {
         this.end = this.med;
-        this.calculateMed();
+      } else {
+        this.init = this.med;
+      }
+      let oldMed = this.med;
+      this.calculateMed();
+      if(this.med === oldMed){
+        this.med = this.end;
       }
     }
     return -1;

@@ -21,11 +21,11 @@ describe('Binary Search test batery', () => {
     assert.equal(0, binarySearch.chop(1, [1, 3, 5]));
     done();
   });
-  xit('assert_equal(1,  chop(3, [1, 3, 5]))', (done) => {
+  it('assert_equal(1,  chop(3, [1, 3, 5]))', (done) => {
     assert.equal(1, binarySearch.chop(3, [1, 3, 5]));
     done();
   });
-  xit('assert_equal(2,  chop(5, [1, 3, 5]))', (done) => {
+  it('assert_equal(2,  chop(5, [1, 3, 5]))', (done) => {
     assert.equal(2, binarySearch.chop(5, [1, 3, 5]));
     done();
   });

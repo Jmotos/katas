@@ -30,23 +30,23 @@ describe('Binary Search test batery', () => {
     done();
   });
 
-  xit('assert_equal(-1, chop(0, [1, 3, 5]))', (done) => {
+  it('assert_equal(-1, chop(0, [1, 3, 5]))', (done) => {
     assert.equal(-1, binarySearch.chop(0, [1, 3, 5]));
     done();
   });
-  xit('assert_equal(-1, chop(2, [1, 3, 5]))', (done) => {
+  it('assert_equal(-1, chop(2, [1, 3, 5]))', (done) => {
     assert.equal(-1, binarySearch.chop(2, [1, 3, 5]));
     done();
   });
-  xit('assert_equal(-1, chop(4, [1, 3, 5]))', (done) => {
+  it('assert_equal(-1, chop(4, [1, 3, 5]))', (done) => {
     assert.equal(-1, binarySearch.chop(4, [1, 3, 5]));
     done();
   });
-  xit('assert_equal(-1, chop(6, [1, 3, 5]))', (done) => {
+  it('assert_equal(-1, chop(6, [1, 3, 5]))', (done) => {
     assert.equal(-1, binarySearch.chop(6, [1, 3, 5]));
     done();
   });
-  xit('assert_equal(0, chop(1, [1, 3, 5, 7]))', (done) => {
+  it('assert_equal(0, chop(1, [1, 3, 5, 7]))', (done) => {
     assert.equal(0, binarySearch.chop(1, [1, 3, 5, 7]));
     done();
   });

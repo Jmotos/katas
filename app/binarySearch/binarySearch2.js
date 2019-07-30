@@ -28,6 +28,7 @@ class BinarySearch{
   }
 
   chop (item, list) {
+    this.init = 0;
     this.end = list.length - 1;
     this.calculateMed();
     

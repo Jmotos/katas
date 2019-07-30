@@ -1,28 +1,41 @@
 class BinarySearch{
+  constructor() {
+    this.init = 0;
+    this.med;
+    this.end;
+  }
+
+  calculateMed() {
+    this.med = Math.floor( ( this.end + this.init ) / 2 );
+  }
+
+  itemIsNotFound() {
+    return this.init <= this.end;
+  }
+
+  itemNotExists(){
+    return this.med === this.end;
+  }
 
   chop (item, list) {
-    let init = 0,
-        end = list.length - 1,
-        med = getHalf(init, end);
+    this.end = list.length - 1;
+    this.calculateMed();
     
-    while(init <= end) {
-      if(list[med] === item) {
-        return med;
+    while(this.itemIsNotFound) {
+      let itemFounded = list[this.med];
+      if(itemFounded === item) {
+        return this.med;
       }
-      if(med === end) {
+      if(this.itemNotExists()) {
         return -1;
       }
-      if (list[med] > item) {
-        end = med;
-        med = getHalf(init, end)
+      if (itemFounded > item) {
+        this.end = this.med;
+        this.calculateMed();
       }
     }
     return -1;
   }
-}
-
-function getHalf(init, end) {
-  return Math.floor( ( end + init ) / 2 );
 }
 
 module.exports = BinarySearch;

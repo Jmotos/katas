@@ -6,7 +6,17 @@ class BinarySearch{
   }
 
   calculateMed() {
-    this.med = Math.floor( ( this.end + this.init ) / 2 );
+    let newMed = Math.floor( ( this.end + this.init ) / 2 );
+    this.med = ( this.med === newMed ) ? this.end : newMed;
+  }
+
+  calculatePositions(itemFounded, itemToFound) {
+    if (itemFounded > itemToFound) {
+      this.end = this.med;
+    } else {
+      this.init = this.med;
+    }
+    this.calculateMed();
   }
 
   itemIsNotFoundYet() {
@@ -29,16 +39,7 @@ class BinarySearch{
       if(this.itemNotExists()) {
         return -1;
       }
-      if (itemFounded > item) {
-        this.end = this.med;
-      } else {
-        this.init = this.med;
-      }
-      let oldMed = this.med;
-      this.calculateMed();
-      if(this.med === oldMed){
-        this.med = this.end;
-      }
+      this.calculatePositions(itemFounded, item);
     }
     return -1;
   }

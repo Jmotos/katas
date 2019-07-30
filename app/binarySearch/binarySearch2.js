@@ -12,8 +12,7 @@ class BinarySearch{
 }
 
 function getHalf(init, end) {
-  let half = end - init;
-  return Math.floor( half / 2 + init );
+  return Math.floor( ( end + init ) / 2 );
 }
 
 module.exports = BinarySearch;

@@ -2,7 +2,7 @@ class BinarySearch{
 
   chop (item, list) {
     
-    
+    return -1;
   }
 }
 

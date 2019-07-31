@@ -9,6 +9,7 @@ function BinarySearch (item, list) {
   function binarySearch(init, end, item) {
     let med = getHalf(init, end),
         itemFounded = _list[med];
+        
     if(itemFounded === item) {
       return med;
     }
@@ -18,12 +19,8 @@ function BinarySearch (item, list) {
     if(itemFounded > item) {
       return binarySearch(init, med, item);
     } else {
-      if(init === med) {
-        med = end;
-      }
-      return binarySearch(med, end, item);
+      return (init === med) ? binarySearch(end, end, item) : binarySearch(med, end, item);
     }
-
   }
 
   return {

@@ -12,11 +12,16 @@ function BinarySearch (item, list) {
     if(itemFounded === item) {
       return med;
     }
-    if (init === med) {
+    if (med === end) {
       return -1;
     }
     if(itemFounded > item) {
       return binarySearch(init, med, item);
+    } else {
+      if(init === med) {
+        med = end;
+      }
+      return binarySearch(med, end, item);
     }
 
   }
@@ -25,15 +30,6 @@ function BinarySearch (item, list) {
     chop: function (item, list) {
       _list = list;
       return binarySearch(0, Math.max(list.length - 1 , 0), item);
-      // let init = 0,
-      //     end = list.length - 1,
-      //     med = getHalf(init, end),
-      //     itemFounded = list[med];
-      
-      // if(itemFounded === item) {
-      //   return med;
-      // }
-      // return -1;
     }
   };
 }

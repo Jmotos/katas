@@ -14,7 +14,7 @@ describe('Binary Search test batery', () => {
     assert.equal(-1, binarySearch.chop(3, [1]));
     done();
   });
-  xit('assert_equal(0,  chop(1, [1]))', (done) => {
+  it('assert_equal(0,  chop(1, [1]))', (done) => {
     assert.equal(0, binarySearch.chop(1, [1]));
     done();
   });

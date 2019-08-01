@@ -1,7 +1,7 @@
 function BinarySearch () {
   return {
     chop: function (item, list) {
-
+      return -1;
     }
   };
 }

@@ -18,6 +18,6 @@
   "homepage": "https://github.com/Jmotos/katas#readme",
   "dependencies": {
     "jasmine-node": "^3.0.0",
-    "mocha": "^6.2.0"
+    "mocha": "^10.2.0"
   }
 }
